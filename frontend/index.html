@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Public Display System – Bachelorarbeit Wael Hammami" />
+    <title>BA Wael Hammami – Public Display</title>
+    <style>
+      /* Globale Basisstile */
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html, body, #root {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+      }
+      body {
+        font-family: 'Courier New', Courier, monospace;
+        -webkit-font-smoothing: antialiased;
+      }
+    </style>
+    <!-- MediaPipe FaceDetector (BlazeFace) wird über @mediapipe/tasks-vision (npm) geladen.
+         WASM-Dateien liegen lokal in public/mediapipe/wasm/,
+         Modell-Dateien in public/models/blaze_face_short_range.tflite bzw.
+         blaze_face_full_range.tflite (Face) und pose_landmarker_lite.task (Pose-Fallback).
+         Kein CDN zur Laufzeit erforderlich. -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
